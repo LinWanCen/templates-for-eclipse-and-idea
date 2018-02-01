@@ -15,7 +15,7 @@ macOS: ~/Library/Preferences/IntelliJ IDEA<version>/templates
 2. 搜索 "temp" -> 选择 编辑器 -> 活动模板  
    input "temp" -> select "Live Templates"
 
-3. 点击"+" -> 选择 Templates Group...
+3. 点击"+" -> 选择 Templates Group...  
    Alt + Ins -> select "Templates Group"
 
 
@@ -80,5 +80,9 @@ System.out.println("$name$:" + $obj$.get$methond$());
 ## 相关链接
 我的IntelliJ IDEA 教程：  
 http://www.jianshu.com/p/aeb3b40d086b  
+本项目 GitHub 分享地址：  
+https://github.com/Lin-WangCheng/templates-for-eclipse-and-idea  
+本项目 Gitee 分享地址：  
+https://gitee.com/linwancheng/templates-for-eclipse-and-idea  
 官方模板变量说明：  
 https://www.jetbrains.com/help/idea/live-template-variables.html  
