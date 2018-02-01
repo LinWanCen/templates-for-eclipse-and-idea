@@ -1,0 +1,21 @@
+<templateSet group="Lwc Struts2">
+  <template name="actionSUCCESS" value="@Action(&quot;$actionName$&quot;)&#10;public String $actionName$() {&#10;    return SUCCESS;&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="actionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="action" value="@org.apache.struts2.convention.annotation.Action(&quot;$actionName$&quot;)&#10;public String $actionName$() {&#10;    return &quot;$actionName$&quot;;&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="actionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="struts2" value="@Controller&#10;@Scope(&quot;prototype&quot;)&#10;@ParentPackage(&quot;struts-default&quot;)&#10;@Namespace(&quot;/$namespace$&quot;)&#10;@Results({&#10;        @Result(name=&quot;success&quot;,location=&quot;/$success$.jsp&quot;)&#10;})" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="namespace" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <variable name="success" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_COMMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

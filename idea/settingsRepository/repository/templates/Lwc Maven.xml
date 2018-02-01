@@ -1,0 +1,49 @@
+<templateSet group="Lwc Maven">
+  <template name="compiler" value="          &lt;!-- 解决 Java 版本问题 --&gt;&#10;          &lt;plugin&gt;&#10;            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;&#10;            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;&#10;            &lt;configuration&gt;&#10;              &lt;source&gt;1.8&lt;/source&gt;&#10;              &lt;target&gt;1.8&lt;/target&gt;&#10;              &lt;encoding&gt;UTF-8&lt;/encoding&gt;&#10;              &lt;showWarnings&gt;true&lt;/showWarnings&gt;&#10;            &lt;/configuration&gt;&#10;          &lt;/plugin&gt;&#10;      " description="plugin 解决 Java 版本问题" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="surefire" value="          &lt;!-- 解决 Maven 控制台乱码 --&gt;&#10;          &lt;plugin&gt;&#10;            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;&#10;            &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;&#10;            &lt;configuration&gt;&#10;              &lt;forkMode&gt;once&lt;/forkMode&gt;&#10;              &lt;argLine&gt;-Dfile.encoding=UTF-8&lt;/argLine&gt;&#10;            &lt;/configuration&gt;&#10;          &lt;/plugin&gt;&#10;      " description="plugin 解决 Maven 控制台乱码" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="tomcat7" value="          &lt;!-- 解决 JDK1.8 不能 tomcat:run --&gt;&#10;          &lt;!-- 运行方法：tomcat7:run --&gt;&#10;          &lt;plugin&gt;&#10;            &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;&#10;            &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;&#10;            &lt;configuration&gt;&#10;              &lt;port&gt;8080&lt;/port&gt;&#10;              &lt;!-- 默认/&lt;artifactId&gt; --&gt;&#10;              &lt;path&gt;/&lt;/path&gt;&#10;            &lt;/configuration&gt;&#10;          &lt;/plugin&gt;&#10;      " description="plugin 解决 JDK1.8 不能 tomcat:run" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="resources" value="  &lt;!-- 解决 Java 目录下的配置文件不编译 --&gt;&#10;    &lt;resources&gt;&#10;      &lt;resource&gt;&#10;        &lt;directory&gt;src/main/java&lt;/directory&gt;&#10;        &lt;includes&gt;&#10;          &lt;include&gt;**/*.xml&lt;/include&gt;&#10;          &lt;include&gt;**/*.properties&lt;/include&gt;&#10;        &lt;/includes&gt;&#10;      &lt;/resource&gt;&#10;    &lt;/resources&gt;&#10;      " description="build&gt;resources 解决 Java 目录下的配置文件不编译" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="war" value="&lt;packaging&gt;war&lt;/packaging&gt;" description="&lt;packaging&gt;war&lt;/packaging&gt;" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="version" value="&lt;version&gt;${$group$.version}&lt;/version&gt;" description="&lt;version&gt;${ .version}&lt;/version&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="group" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="plugins" value="  &lt;build&gt;&#10;    &lt;plugins&gt;&#10;      $END$&#10;    &lt;/plugins&gt;&#10;  &lt;/build&gt;" description="&lt;build&gt; &lt;plugins&gt;" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="springboot" value="  &lt;parent&gt;&#10;    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#10;    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;&#10;    &lt;version&gt;1.5.6.RELEASE&lt;/version&gt;&#10;  &lt;/parent&gt;&#10;&#10;  &lt;properties&gt;&#10;    &lt;java.version&gt;1.8&lt;/java.version&gt;&#10;  &lt;/properties&gt;&#10;&#10;  &lt;dependencies&gt;&#10;    &lt;!-- 配置Web启动器 --&gt;&#10;    &lt;dependency&gt;&#10;      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#10;      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;&#10;    &lt;/dependency&gt;&#10;    &lt;!-- 开启热部署 --&gt;&#10;    &lt;dependency&gt;&#10;      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#10;      &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;&#10;    &lt;/dependency&gt;&#10;  &lt;/dependencies&gt;&#10;&#10;  &lt;build&gt;&#10;    &lt;plugins&gt;&#10;      &lt;!-- 打包插件 --&gt;&#10;      &lt;plugin&gt;&#10;        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#10;        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;&#10;      &lt;/plugin&gt;&#10;    &lt;/plugins&gt;&#10;  &lt;/build&gt;" description="springboot" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="starter" value="&lt;dependency&gt;&#10;  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&#10;  &lt;artifactId&gt;spring-boot-starter-$app$&lt;/artifactId&gt;&#10;&lt;/dependency&gt;" description="&lt;dependency&gt;spring-boot-starter-" toReformat="true" toShortenFQNames="true">
+    <variable name="app" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+</templateSet>

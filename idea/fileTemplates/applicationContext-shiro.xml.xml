@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- 1. 过滤器工厂 SFFB -->
+  <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    <property name="securityManager" ref="securityManager"/>
+    <property name="loginUrl" value="/index.jsp"/>
+    <property name="successUrl" value="/index.jsp"/>
+    <property name="unauthorizedUrl" value="/index2.jsp"/>
+
+    <!-- 对指定的资源，应用shiro提供的哪些过滤器： anon匿名访问过滤器，会直接放行资源 -->
+    <!-- authc 认证过滤器;  perms 授权校验过滤器 -->
+    <property name="filterChainDefinitions">
+      <value>
+        /index.jsp* = anon
+        /home* = anon
+        /sysadmin/login/login.jsp* = anon
+        /sysadmin/login/loginAction_logout* = anon
+        /login* = anon
+        /logout* = anon
+        /components/** = anon
+        /css/** = anon
+        /img/** = anon
+        /js/** = anon
+        /plugins/** = anon
+        /images/** = anon
+        /js/** = anon
+        /make/** = anon
+        /skin/** = anon
+        /stat/** = anon
+        /ufiles/** = anon
+        /validator/** = anon
+        /resource/** = anon
+        /** = authc
+      </value>
+    </property>
+  </bean>
+
+  <!-- 2. 安全管理 DWSM -->
+  <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    <property name="realm" ref="customRealm"/>
+  </bean>
+
+  <!-- 3. 领域 extends AuthorizingRealm -->
+  <bean id="customRealm" class="cn.itcast.server.shiro.realm.CustomRealm">
+    <property name="credentialsMatcher" ref="credentialsMatcher"/>
+  </bean>
+
+  <!-- 4. 创建凭证匹配器，指定加密算法 HCM -->
+  <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+    <property name="hashAlgorithmName" value="md5"/>
+  </bean>
+
+  <!-- 5. shiro注解支持 -->
+  <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+  <!-- depends-on 表示创建当前bean对象使用，会先创建depends-on依赖的对象 -->
+  <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+        depends-on="lifecycleBeanPostProcessor"/>
+  <!-- 拦截器.授权属性来源顾问 AASA -->
+  <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+    <property name="securityManager" ref="securityManager"/>
+  </bean>
+
+</beans>

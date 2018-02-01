@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+  <template autoinsert="true" context="javaScript" deleted="false" description=" jq $(&quot;#tabID&quot;)"
+            enabled="true" name="$">$$("#${cursor}")
+  </template>
+  <template autoinsert="true" context="javaScript" deleted="false" description=" jq post(url, data, callback(), type);"
+            enabled="true" name="ajaxPost1">var url = "$${pageContext.request.contextPath}/${localVar}Servlet"&#13;
+    var data = {"${action}":"${find}"};&#13;
+    var callback = function(backData) {&#13;
+    ${cursor}&#13;
+    }&#13;
+    var type = "${json}";&#13;
+    $$.post(url, data, callback, type);
+  </template>
+  <template autoinsert="true" context="javaScript" deleted="false" description=" jq post(url, data, callback(), type);"
+            enabled="true" name="ajaxPost2">$$.post("$${pageContext.request.contextPath}/${localVar}Servlet",&#13;
+    {"${action}":"${find}"},&#13;
+    function(backData) {&#13;
+    ${cursor}&#13;
+    },&#13;
+    "${json}"&#13;
+    );
+  </template>
+</templates>

@@ -1,0 +1,17 @@
+<templateSet group="Lwc Oracle">
+  <template name="bt" value="SELECT *&#10;FROM (SELECT&#10;        T.*,&#10;        ROWNUM R&#10;      FROM $tableOrOrderBy$ T&#10;      WHERE ROWNUM &lt;= $end$&#10;     )&#10;WHERE R &gt;= $start$;" description="Between From Table" toReformat="false" toShortenFQNames="true">
+    <variable name="tableOrOrderBy" expression="complete()" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <variable name="start" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="SQL" value="true" />
+    </context>
+  </template>
+  <template name="lt" value="SELECT&#10;  T.*&#10;FROM $tableOrOrderBy$ T&#10;WHERE ROWNUM &lt;= $end$" description="Top From Table" toReformat="false" toShortenFQNames="true">
+    <variable name="tableOrOrderBy" expression="complete()" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="SQL" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,25 @@
+<templateSet group="Lwc Singleton">
+  <template name="sl" value="private static $Type$ instance = new $Type$();&#10;private $Type$() {}&#10;public static $Type$ getInstance() {&#10;    return instance;&#10;}" description="饿汉式单例" toReformat="true" toShortenFQNames="true">
+    <variable name="Type" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="slazy" value="private static class SingletonHolder {&#10;    private static final $Type$ INSTANCE = new $Type$();&#10;}&#10;private $Type$() {}&#10;public static final $Type$ getInstance() {&#10;    return SingletonHolder.INSTANCE;&#10;}" description="登记式/静态内部类，替代普通懒汉的单线程/低效" toReformat="true" toShortenFQNames="true">
+    <variable name="Type" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="enumsingleton" value="public enum Singleton {&#10;    INSTANCE;&#10;    public void whateverMethod() {&#10;    }&#10;}" description="Effective Java 推荐 枚举单例 JDK1.5 起" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="dcl" value="private volatile static $Type$ singleton;&#10;private $Type$ (){}&#10;public static $Type$ getSingleton() {&#10;    if (singleton == null) {&#10;        synchronized ($Type$.class) {&#10;            if (singleton == null) {&#10;                singleton = new $Type$();&#10;            }&#10;        }&#10;    }&#10;    return singleton;&#10;}" description="双检锁/双重校验锁（DCL，即 double-checked locking）JDK1.5 起" toReformat="true" toShortenFQNames="true">
+    <variable name="Type" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

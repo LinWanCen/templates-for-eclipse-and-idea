@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description=" if (${array} != null &amp;&amp; ${array}.length &gt; 0)" enabled="true" name="ifnnl">if (${array} != null &amp;&amp; ${array}.length &gt; 0) {&#13;
+    ${cursor}&#13;
+}</template><template autoinsert="true" context="java" deleted="false" description=" if (${array} == null || ${array}.length() == 0)" enabled="true" name="ifnl">if (${array} == null || ${array}.length() == 0) {&#13;
+    ${cursor}&#13;
+}</template><template autoinsert="true" context="java" deleted="false" description=" if (${iterable} != null &amp;&amp; ${iterable}.size() &gt; 0)" enabled="true" name="ifnns">if (${iterable} != null &amp;&amp; ${iterable}.size() &gt; 0) {&#13;
+    ${cursor}&#13;
+}</template><template autoinsert="true" context="java" deleted="false" description=" if (${iterable} == null || ${iterable}.size() == 0)" enabled="true" name="ifns">if (${iterable} == null || ${iterable}.size() == 0) {&#13;
+    ${cursor}&#13;
+}</template><template autoinsert="false" context="java-statements" deleted="false" description=" if (${name:var} != null)" enabled="true" name="inn">if (${name:var} != null) {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description=" if (${name:var} != null)" enabled="true" name="ifnn">if (${name:var} != null) {
+	${cursor}
+}</template><template autoinsert="false" context="java-statements" deleted="false" description=" if (${name:var} == null)" enabled="true" name="ifn">if (${name:var} == null) {
+	${cursor}
+}</template><template autoinsert="true" context="java" deleted="false" description=" if (${var}.equalsIgnoreCase(${var2}))" enabled="true" name="ifeq">if (${var}.equalsIgnoreCase(${var2})) {&#13;
+	${line_selection}${cursor}&#13;
+}</template><template autoinsert="true" context="java" deleted="false" description=" if (StringUtils.isNotEmpty(${var}))" enabled="true" name="ifnemStringUtils">if (StringUtils.isNotEmpty(${var})) {&#13;
+    ${cursor}&#13;
+}${:import(org.apache.commons.lang3.StringUtils)}</template><template autoinsert="true" context="java" deleted="false" description=" if (StringUtils.isNotEmpty(${var}))" enabled="true" name="ifemStringUtils">if (StringUtils.isEmpty(${var})) {&#13;
+    ${cursor}&#13;
+}${:import(org.apache.commons.lang3.StringUtils)}</template></templates>

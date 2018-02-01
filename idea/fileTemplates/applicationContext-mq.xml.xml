@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://activemq.apache.org/schema/core
+                           http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+  <!-- 获取MQ连接工厂 -->
+  <!-- ActiveMQ 连接工厂 -->
+  <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
+  <!-- 如果连接网络：tcp://ip:61616；未连接网络：tcp://localhost:61616 以及用户名，密码-->
+  <amq:connectionFactory id="amqConnectionFactory"
+                         brokerURL="tcp://localhost:61616" userName="admin" password="admin"/>
+
+  <!-- Spring Caching连接工厂 -->
+  <!-- Spring用于管理真正的ConnectionFactory的ConnectionFactory -->
+  <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+    <!-- 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory -->
+    <property name="targetConnectionFactory" ref="amqConnectionFactory"/>
+    <!-- 同上，同理 -->
+    <!-- <constructor-arg ref="amqConnectionFactory" /> -->
+    <!-- Session缓存数量 -->
+    <property name="sessionCacheSize" value="100"/>
+  </bean>
+
+  <!-- 配置一个队列消息的模板 -->
+  <bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+    <!-- 使用构造器实现ConnectionFactory注值 -->
+    <constructor-arg ref="connectionFactory"/>
+    <!-- 非pub/sub模式，即队列方式 -->
+    <property name="pubSubDomain" value="false"/>
+  </bean>
+
+  <!-- 配置一个发布订阅模式的模板 -->
+  <bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+    <!-- 使用构造器注值 -->
+    <constructor-arg ref="connectionFactory"/>
+    <!-- 消息的类型 -->
+    <property name="pubSubDomain" value="true"/>
+  </bean>
+</beans>

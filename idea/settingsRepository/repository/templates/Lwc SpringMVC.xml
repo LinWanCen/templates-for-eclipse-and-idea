@@ -1,0 +1,115 @@
+<templateSet group="Lwc SpringMVC">
+  <template name="mo" value="org.springframework.ui.Model model" description="Model model 参数" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="maa" value="model.addAttribute(&quot;$name$&quot;, $obj$);" description="model.addAttribute 添加属性" toReformat="false" toShortenFQNames="true">
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rp" value="@org.springframework.web.bind.annotation.RequestParam(&quot;$name$&quot;) $Type$ $name$" description="@RequestParam(&quot;&quot;) 表单参数" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Type" expression="completeSmart()" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rpd" value="@org.springframework.web.bind.annotation.RequestParam(value = &quot;$name$&quot;, defaultValue = &quot;$val$&quot;) $Type$ $name$" description="@RequestParam(value = &quot;&quot;, defaultValue = &quot;&quot;) 带默认参数" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Type" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rms" value="@org.springframework.web.bind.annotation.RequestMapping(&quot;$name$&quot;)&#10;public String $name$($params$){&#10;    $END$&#10;    return &quot;$jsp$&quot;;&#10;}" description="RequestMapping String 方法" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="params" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="jsp" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rmv" value="@org.springframework.web.bind.annotation.RequestMapping(&quot;$name$&quot;)&#10;public $Type$ $name$($params$){&#10;    $END$&#10;}" description="RequestMapping 方法" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="Type" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="true" />
+    <variable name="params" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="mf" value="org.springframework.web.multipart.MultipartFile file" description="MultipartFile file 参数" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fu" value="// 文件上传&#10;if (file != null) {&#10;    String name = file.getOriginalFilename();&#10;    if (name != null) {&#10;        String saveName = UUID.randomUUID().toString()+name;&#10;        try {&#10;            String path = &quot;$path$\&quot;;&#10;            File dest = new File(path + saveName);&#10;            file.transferTo(dest);&#10;        } catch (Exception e) {&#10;            e.printStackTrace();&#10;        }&#10;        $obj$.setPic(saveName);&#10;    }&#10;}" description="fileupload" toReformat="false" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rm" value="@org.springframework.web.bind.annotation.RequestMapping(&quot;$name$&quot;)" description="@RequestMapping(&quot;&quot;) 路径注解" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="gm" value="@org.springframework.web.bind.annotation.GetMapping(&quot;$name$&quot;)&#10;public $Type$ $methond$($END$){&#10;    &#10;}" description="GetMapping 方法" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="Type" expression="guessElementType(&quot;Object&quot;)" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <variable name="methond" expression="" defaultValue="&quot;methond&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pm" value="@org.springframework.web.bind.annotation.PostMapping(&quot;$name$&quot;)&#10;public $Type$ $methond$($END$){&#10;    &#10;}" description="PostMapping 方法" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="Type" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="false" />
+    <variable name="methond" expression="" defaultValue="&quot;methond&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rgm" value="@org.springframework.web.bind.annotation.GetMapping(&quot;$uri$&quot;)&#10;public org.springframework.http.ResponseEntity&lt;$Type$&gt; $mehtod$(&#10;        @org.springframework.web.bind.annotation.PathVariable(&quot;$pv$&quot;) $pvType$ $pv$) {&#10;    try {&#10;        if ($pv$ == null) {&#10;            return ResponseEntity.badRequest().body(null);&#10;        }&#10;        $Type$ $obj$ = $service$;&#10;        if (item == null) {&#10;            return ResponseEntity.status(org.springframework.http.HttpStatus.NOT_FOUND).body(null);&#10;        }&#10;        return ResponseEntity.ok($obj$);&#10;    } catch (Exception e) {&#10;        e.printStackTrace();&#10;    }&#10;    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);&#10;}" description="RESTfull 查" toReformat="true" toShortenFQNames="true">
+    <variable name="uri" expression="" defaultValue="&quot;{id}&quot;" alwaysStopAt="true" />
+    <variable name="Type" expression="typeOfVariable(service)" defaultValue="" alwaysStopAt="true" />
+    <variable name="mehtod" expression="" defaultValue="&quot;mehtod&quot;" alwaysStopAt="true" />
+    <variable name="pv" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="pvType" expression="" defaultValue="&quot;Long&quot;" alwaysStopAt="true" />
+    <variable name="obj" expression="variableOfType(Type)" defaultValue="" alwaysStopAt="true" />
+    <variable name="service" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pv" value="@org.springframework.web.bind.annotation.PathVariable(&quot;$name$&quot;) $Type$ $name$" description="@PathVariable(&quot;&quot;) 路径参数" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Type" expression="completeSmart()" defaultValue="&quot;Long&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rf" value="&lt;!-- 配置PUT请求过滤器(解决PUT请求参数接收) --&gt;&#10;  &lt;filter&gt;&#10;    &lt;filter-name&gt;httpPutFormContentFilter&lt;/filter-name&gt;&#10;    &lt;filter-class&gt;org.springframework.web.filter.HttpPutFormContentFilter&lt;/filter-class&gt;&#10;    &lt;init-param&gt;&#10;      &lt;param-name&gt;charset&lt;/param-name&gt;&#10;      &lt;param-value&gt;utf-8&lt;/param-value&gt;&#10;    &lt;/init-param&gt;&#10;  &lt;/filter&gt;&#10;  &lt;filter-mapping&gt;&#10;    &lt;filter-name&gt;httpPutFormContentFilter&lt;/filter-name&gt;&#10;    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&#10;  &lt;/filter-mapping&gt;&#10;&#10;  &lt;!-- 配置隐藏方法过滤器(让POST请求模拟发送DELETE请求，添加参数_method=delete) --&gt;&#10;  &lt;filter&gt;&#10;    &lt;filter-name&gt;hiddenHttpMethodFilter&lt;/filter-name&gt;&#10;    &lt;filter-class&gt;org.springframework.web.filter.HiddenHttpMethodFilter&lt;/filter-class&gt;&#10;  &lt;/filter&gt;&#10;  &lt;filter-mapping&gt;&#10;    &lt;filter-name&gt;hiddenHttpMethodFilter&lt;/filter-name&gt;&#10;    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&#10;  &lt;/filter-mapping&gt;" description="RESTfull PUT DELETE setting in web.xml" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="rpage" value="@org.springframework.web.bind.annotation.RequestParam(&quot;page&quot;) Integer page,&#10;@org.springframework.web.bind.annotation.RequestParam(&quot;rows&quot;) Integer rows" description="@RequestParam(&quot;page&quot;) Integer page &amp; rows" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rpr" value="@org.springframework.web.bind.annotation.RequestParam(value = &quot;$name$&quot;, required = false) $Type$ $name$" description="@RequestParam(value = &quot;&quot;, required = false) 不必须" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Type" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

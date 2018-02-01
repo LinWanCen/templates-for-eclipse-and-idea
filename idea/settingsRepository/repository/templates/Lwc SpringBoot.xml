@@ -1,0 +1,13 @@
+<templateSet group="Lwc SpringBoot">
+  <template name="val" value="@org.springframework.beans.factory.annotation.Value(&quot;${$name$}&quot;)&#10;private String $name$;&#10;" description="@Value(&quot;${name}&quot;)" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="runwithSpringBoot" value="@org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringJUnit4ClassRunner.class)&#10;@org.springframework.boot.test.context.SpringBootTest(classes={Application.class})" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

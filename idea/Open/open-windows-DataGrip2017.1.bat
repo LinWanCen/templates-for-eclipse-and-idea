@@ -1,0 +1,1 @@
+start /max %USERPROFILE%\.DataGrip2017.1\config\templates

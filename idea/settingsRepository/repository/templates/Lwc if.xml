@@ -1,0 +1,58 @@
+<templateSet group="Lwc if">
+  <template name="ifc" value="if ($obj$ != null) { $obj$.close(); }" description="if ( != null) { .close(); }" toReformat="false" toShortenFQNames="true">
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ifeq" value="if (&quot;$str$&quot;.equals($obj$)) {&#10;    $END$&#10;}" description="if (&quot;&quot;.equals($obj$)) { }" toReformat="true" toShortenFQNames="true">
+    <variable name="str" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ifnb" value="if (org.apache.commons.lang3.StringUtils.isNotBlank($obj$)) {&#10;    $END$&#10;}" description="if (StringUtils.isNotBlank( )) 非空/空串/空白字符" toReformat="true" toShortenFQNames="true">
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ifnl" value="if($arr$ == null || $arr$.length == 0) {&#10;    $END$&#10;}" description="if($arr$ == null || $arr$.length == 0) {  即StringUtils.isEmpty" toReformat="true" toShortenFQNames="true">
+    <variable name="arr" expression="arrayVariable()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ifns" value="if($list$ == null || $list$.size() == 0) {&#10;    $END$&#10;}" description="if( != null &amp;&amp; .size() &gt; 0) { }" toReformat="true" toShortenFQNames="true">
+    <variable name="list" expression="iterableVariable()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="innl" value="if($arr$ != null || $arr$.length &gt; 0) {&#10;    $END$&#10;}" description="if( != null &amp;&amp; .length &gt; 0) { } 非空/空串，可空白，即 StringUtils.isNotEmpty" toReformat="true" toShortenFQNames="true">
+    <variable name="arr" expression="arrayVariable()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="inns" value="if($list$ != null &amp;&amp; $list$.size() &gt; 0) {&#10;    $END$&#10;}" description="if( != null &amp;&amp; .size() &gt; 0) { }" toReformat="true" toShortenFQNames="true">
+    <variable name="list" expression="iterableVariable()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ineq" value="if (!&quot;$str$&quot;.equals($obj$)) {&#10;    $END$&#10;}" description="if (!&quot;&quot;.equals($obj$)) { }" toReformat="true" toShortenFQNames="true">
+    <variable name="str" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ifb" value="if (org.apache.commons.lang3.StringUtils.isBlank($obj$)) {&#10;    $END$&#10;}" description="if (StringUtils.isBlank( )) 空/空串/空白字符" toReformat="true" toShortenFQNames="true">
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

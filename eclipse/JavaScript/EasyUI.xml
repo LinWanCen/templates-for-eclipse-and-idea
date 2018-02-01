@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="javaScript" deleted="false" description=" EasyUI分页工具栏" enabled="true" name="pagination">pagination:true,&#13;
+pageNumber:1,&#13;
+pageSize:10,&#13;
+pageList:[10,20,30,40,50]</template><template autoinsert="true" context="javaScript" deleted="false" description=" EasyUI 重新载入当前页面数据 " enabled="true" name="reload">$$('#${localVar}').datagrid('reload'); // 重新载入当前页面数据 </template><template autoinsert="true" context="javaScript" deleted="false" description=" EasyUI 右下角提示" enabled="true" name="messager">$$.messager.show({&#13;
+  title:"提示",&#13;
+  msg:"操作成功",&#13;
+  timeout:2000,&#13;
+  showType:"slide"&#13;
+});</template><template autoinsert="true" context="javaScript" deleted="false" description=" EasyUI 数据行特殊" enabled="true" name="formatter">    formatter : function(value, row, index) {${cursor}&#13;
+      return ${row};&#13;
+    }</template><template autoinsert="true" context="javaScript" deleted="false" description=" EasyUI 数据行" enabled="true" name="columns">columns:[[&#13;
+  {field:'${name}',title:'${title}',width:100,align:'center'},&#13;
+  {field:'${opt}',title:'${option}',width:100,align:'center',&#13;
+    formatter:function(value, row, index){&#13;
+        return '&lt;a href="" onclick=""&gt;&lt;/a&gt;';&#13;
+    }&#13;
+  }&#13;
+]],&#13;
+fitColumns: true</template><template autoinsert="true" context="javaScript" deleted="false" description=" Easy UI fit border" enabled="true" name="fit">fit: true,&#13;
+border: false</template></templates>

@@ -1,0 +1,66 @@
+<templateSet group="Lwc MyBatis">
+  <template name="&lt;iflike" value="&lt;if test=&quot;$col$ != null and $col$ != ''&quot;&gt;&#10;  $pre$$col$ like #{$col$}&#10;&lt;/if&gt;" description="&lt;if test=&quot; != null and != ''&quot;&gt;AND like #{}&lt;/if&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="col" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pre" expression="" defaultValue="“AND ”" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="false" />
+      <option name="XSL_TEXT" value="false" />
+    </context>
+  </template>
+  <template name="j" value="#{$SELECTION$}$END$" description="Surround with #{ }" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="SQL" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="like" value="LIKE '%$var$%' " description="" toReformat="true" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SQL" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ifeq" value="&lt;if test=&quot;$col$ != null and $col$ != ''&quot;&gt;&#10;  $pre$$col$ = #{$col$}&#10;&lt;/if&gt;" description="&lt;if test=&quot; != null and != ''&quot;&gt;AND = #{}&lt;/if&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="col" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pre" expression="" defaultValue="&quot;AND &quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="false" />
+      <option name="XSL_TEXT" value="false" />
+    </context>
+  </template>
+  <template name="inMapper" value="IN&#10;&lt;foreach collection=&quot;array&quot; open=&quot;(&quot; item=&quot;i&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;&#10;  #{i}&#10;&lt;/foreach&gt;" description="IN &lt;foreach collection=&quot;array&quot; open=&quot;(&quot; item=&quot;i&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;   #{i} &lt;/foreach&gt;" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="SQL" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="valuesMapper" value="VALUES&#10;&lt;foreach collection=&quot;list&quot; item=&quot;$o$&quot; separator=&quot;,&quot;&gt;&#10;  (#{$o$.$id$}, #{$o$.$name$})&#10;&lt;/foreach&gt;" description="VALUES &lt;foreach collection=&quot;list&quot; item=&quot;$o$&quot; separator=&quot;,&quot;&gt;   (#{$o$.$id$}, #{$o$.$name$}) &lt;/foreach&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="o" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SQL" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ifeqSET" value="&lt;if test=&quot;$col$ != null and $col$ != ''&quot;&gt;&#10;  $pre$$col$ = #{$col$},&#10;&lt;/if&gt;" description="&lt;if test=&quot; != null and != ''&quot;&gt;= #{},&lt;/if&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="col" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pre" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="false" />
+      <option name="XSL_TEXT" value="false" />
+    </context>
+  </template>
+  <template name="&lt;iflikeSET" value="&lt;if test=&quot;$col$ != null and $col$ != ''&quot;&gt;&#10;  $pre$$col$ like #{$col$},&#10;&lt;/if&gt;" description="&lt;if test=&quot; != null and != ''&quot;&gt;like #{},&lt;/if&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="col" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pre" expression="" defaultValue="“”" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="false" />
+      <option name="XSL_TEXT" value="false" />
+    </context>
+  </template>
+</templateSet>

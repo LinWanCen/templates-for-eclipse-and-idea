@@ -1,0 +1,29 @@
+<templateSet group="Lwc jquery">
+  <template name="$" value="$('#$id$')" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ajaxpost" value="    $.post('$url$',&#10;        {&quot;$name$&quot;: &quot;$var$&quot;},&#10;        function (backData) {&#10;          $END$&#10;        },&#10;        '$json$'&#10;    );" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="json" expression="" defaultValue="&quot;json&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="jsonp" value="$.ajax({&#10;  type: &quot;get&quot;,&#10;  url: &quot;$url$&quot;,&#10;  dataType: &quot;jsonp&quot;,&#10;  jsonp: &quot;callback&quot;,&#10;  jsonpCallback: &quot;?&quot;,&#10;  success: function (json) {&#10;    $END$&#10;  },&#10;  error: function () {&#10;  }&#10;});" description="跨域请求数据" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="log" value="console.log($var$);" description="控制台输出" toReformat="true" toShortenFQNames="true">
+    <variable name="var" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

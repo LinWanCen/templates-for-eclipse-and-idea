@@ -1,0 +1,36 @@
+<templateSet group="Lwc output">
+  <template name="sget" value="System.out.println(&quot;$name$:&quot; + $obj$.get(&quot;$name$&quot;));" description="System.out.println(&quot;name:&quot;+obj.get(&quot;name&quot;));" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="" defaultValue="suggestFirstVariableName(&quot;Object&quot;)" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sgetter" value="System.out.println(&quot;$name$:&quot; + $obj$.get$methond$());" description="System.out.println(&quot;name:&quot; + obj.getter());" toReformat="false" toShortenFQNames="true">
+    <variable name="obj" expression="" defaultValue="suggestFirstVariableName(&quot;Object&quot;)" alwaysStopAt="false" />
+    <variable name="methond" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="decapitalize(methond)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="shr" value="System.out.println(&quot;$line$&quot;);" description="System.out.println(&quot;----------&quot;); 默认30个-" toReformat="false" toShortenFQNames="true">
+    <variable name="line" expression="" defaultValue="&quot;------------------------------&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sti" value="System.out.println(&quot;---------- $title$ ----------&quot;);" description="System.out.println(&quot;----------$title$----------&quot;);" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="svar" value="System.out.println(&quot;$name$:&quot; + $obj$);" description="System.out.println(&quot;$name$:&quot; + $obj$);" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="false" />
+    <variable name="obj" expression="" defaultValue="suggestFirstVariableName(&quot;Object&quot;)" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

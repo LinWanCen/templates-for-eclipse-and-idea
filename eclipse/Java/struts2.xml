@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description=" struts2 Action" enabled="true" name="action">    @Action("${actionName}")${:import(org.apache.struts2.convention.annotation.Action)}&#13;
+    public String ${actionName}() {${cursor}&#13;
+        return "${actionName}";&#13;
+    }</template><template autoinsert="true" context="java" deleted="false" description=" struts2 Action return SUCCESS" enabled="true" name="actionSUCCESS">    @Action("${actionName}")${:import(org.apache.struts2.convention.annotation.Action)}&#13;
+    public String ${actionName}() {${cursor}&#13;
+        return SUCCESS;&#13;
+    }</template><template autoinsert="true" context="java" deleted="false" description=" struts2 Action void" enabled="true" name="actionvoid">    @Action("${actionName}")${:import(org.apache.struts2.convention.annotation.Action)}&#13;
+    public void ${actionName}() {&#13;
+        ${cursor}&#13;
+    }</template><template autoinsert="true" context="java" deleted="false" description=" struts2 ActionContext.getContext()" enabled="true" name="acgc">ActionContext.getContext()${:import(com.opensymphony.xwork2.ActionContext)}</template><template autoinsert="true" context="java" deleted="false" description=" struts2 Anno" enabled="true" name="struts">${:import(org.apache.struts2.convention.annotation.Namespace,&#13;
+org.apache.struts2.convention.annotation.ParentPackage,&#13;
+org.apache.struts2.convention.annotation.Result,&#13;
+org.apache.struts2.convention.annotation.Results,&#13;
+org.springframework.context.annotation.Scope,&#13;
+org.springframework.stereotype.Controller&#13;
+)}@Controller&#13;
+@Scope("prototype")&#13;
+@ParentPackage("struts-default")&#13;
+@Namespace("/${}")&#13;
+@Results({&#13;
+    @Result(name="success",location="/${success}.jsp")&#13;
+    })</template><template autoinsert="true" context="java" deleted="false" description=" struts2 ValueStack push(val)" enabled="true" name="vp">ActionContext.getContext().getValueStack().push(${var});</template></templates>

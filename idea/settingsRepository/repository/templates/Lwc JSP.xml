@@ -1,0 +1,29 @@
+<templateSet group="Lwc JSP">
+  <template name="k" value="${$SELECTION$}" description="Surround with ${ }" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JAVA_STRING" value="true" />
+      <option name="JSP" value="true" />
+      <option name="SQL" value="true" />
+      <option name="XML" value="true" />
+      <option name="XSL_TEXT" value="false" />
+    </context>
+  </template>
+  <template name="jstlc" value="&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;" description="jsp/jstl/core" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+  <template name="jstlfmt" value="&lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jstl/fmt&quot; %&gt;" description="jsp/jstl/fmt" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+  <template name="date" value="&lt;fmt:formatDate value=&quot;${$birthday$}&quot; pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;/&gt;" description="&lt;fmt:formatDate value=&quot;${birthday}&quot; pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;/&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="birthday" expression="" defaultValue="&quot;birthday&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSP" value="true" />
+    </context>
+  </template>
+</templateSet>

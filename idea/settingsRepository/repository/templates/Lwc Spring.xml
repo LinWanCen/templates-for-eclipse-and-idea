@@ -1,0 +1,14 @@
+<templateSet group="Lwc Spring">
+  <template name="runwithSpring" value="@org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringJUnit4ClassRunner.class)&#10;@org.springframework.test.context.ContextConfiguration(&quot;classpath:applicationContext.xml&quot;)" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="re" value="@Resource&#10;private $Type$ $obj$;" description="@Resource private" toReformat="true" toShortenFQNames="true">
+    <variable name="Type" expression="completeSmart()" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="variableOfType(Type)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

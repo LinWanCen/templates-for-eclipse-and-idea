@@ -1,0 +1,76 @@
+<templateSet group="Lwc Servlet">
+  <template name="rpi" value="int $id$ = Integer.parseInt(request.getParameter(&quot;$id$&quot;));" description="获取请求参数并转换为int" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rp" value="String $id$ = request.getParameter(&quot;$id$&quot;);" description="获取请求参数" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rpn" value="String $id$Str = request.getParameter(&quot;$id$&quot;);&#10;if ($id$Str == null || $id$Str.trim().length() == 0) {&#10;    $id$Str = &quot;$def$&quot;;&#10;}&#10;int $id$ = Integer.parseInt($id$Str);" description="获取请求参数，若空时设置默认值，并转为int" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="def" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rs" value="request.setAttribute(&quot;$name$&quot;, $obj$);" description="设置请求域参数" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;) " defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rf" value="request.getRequestDispatcher(&quot;$path$&quot;).forward(request, response);" description="转发" toReformat="true" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="servlet" value="public void $methodName$(HttpServletRequest request, HttpServletResponse response)&#10;        throws ServletException, IOException {&#10;    &#10;}" description="HttpServlet 方法" toReformat="true" toShortenFQNames="true">
+    <variable name="methodName" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="rss" value="request.getSession().setAttribute(&quot;$name$&quot;, $obj$);" description="设置会话域值" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="true" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;) " defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rsg" value="$Type$ $id$ = ($Type$) request.getSession().getAttribute(&quot;$id$&quot;);" description="获取会话域值" toReformat="true" toShortenFQNames="true">
+    <variable name="Type" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rr" value="response.sendRedirect(&quot;$path$&quot;);" description="重定向" toReformat="true" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="req" value="javax.servlet.http.HttpServletRequest request" description="HttpServletRequest request" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="resp" value="javax.servlet.http.HttpServletResponse response" description="HttpServletResponse response" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="toutf8" value="$param$ = new String($param$.getBytes(&quot;iso8859-1&quot;), &quot;utf-8&quot;);" description="ISO8859-1 转 UTF-8" toReformat="true" toShortenFQNames="true">
+    <variable name="param" expression="suggestFirstVariableName(&quot;Object&quot;) " defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="org.springframework.ide.eclipse.beans.ui.editor.templates.contextType.all" deleted="false" description="" enabled="true" name="tx">  &lt;bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager"&gt;&#13;
+    &lt;property name="sessionFactory" ref="sessionFactory"/&gt;&#13;
+  &lt;/bean&gt;&#13;
+  &#13;
+  &lt;tx:advice id="tx" transaction-manager="transactionManager"&gt;&#13;
+    &lt;tx:attributes&gt;&#13;
+      &lt;tx:method name="*" read-only="false" propagation="REQUIRED"/&gt;&#13;
+      &lt;tx:method name="find*" read-only="true" propagation="SUPPORTS"/&gt;&#13;
+    &lt;/tx:attributes&gt;&#13;
+  &lt;/tx:advice&gt;&#13;
+  &#13;
+  &lt;aop:config&gt;&#13;
+    &lt;aop:pointcut expression="execution(* cn.itcast.crm.service.impl.*.*(..))" id="pt1"/&gt;&#13;
+    &lt;aop:advisor advice-ref="tx" pointcut-ref="pt1"/&gt;&#13;
+  &lt;/aop:config&gt;</template></templates>
