@@ -1,0 +1,1 @@
+start /max %USERPROFILE%\.IntelliJIdea2018.1\config
