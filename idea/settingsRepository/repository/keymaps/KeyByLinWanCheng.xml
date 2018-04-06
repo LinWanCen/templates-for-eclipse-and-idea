@@ -3,10 +3,6 @@
     <keyboard-shortcut first-keystroke="ctrl space" />
     <keyboard-shortcut first-keystroke="alt slash" />
   </action>
-  <action id="Compile">
-    <keyboard-shortcut first-keystroke="shift ctrl f9" />
-    <keyboard-shortcut first-keystroke="ctrl s" />
-  </action>
   <action id="EditorCompleteStatement">
     <keyboard-shortcut first-keystroke="shift ctrl enter" />
     <keyboard-shortcut first-keystroke="alt period" />
