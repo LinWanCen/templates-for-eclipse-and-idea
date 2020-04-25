@@ -1,35 +1,35 @@
 <templateSet group="Lwc SuppressWarnings">
-  <template name="rawtypes" value="@SuppressWarnings(&quot;rawtypes&quot;)" description="忽略类型安全" toReformat="false" toShortenFQNames="true">
+  <template name="unr" value="@SuppressWarnings(&quot;rawtypes&quot;)" description="忽略类型安全" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="unused" value="@SuppressWarnings(&quot;unused&quot;)" description="忽略不使用" toReformat="false" toShortenFQNames="true">
+  <template name="unu" value="@SuppressWarnings(&quot;unused&quot;)" description="忽略不使用" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="deprecation" value="@SuppressWarnings(&quot;deprecation&quot;)" description="忽略过时" toReformat="false" toShortenFQNames="true">
+  <template name="und" value="@SuppressWarnings(&quot;deprecation&quot;)" description="忽略过时" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="unchecked" value="@SuppressWarnings(&quot;unchecked&quot;)" description="忽略安全检查" toReformat="false" toShortenFQNames="true">
+  <template name="unc" value="@SuppressWarnings(&quot;unchecked&quot;)" description="忽略安全检查" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="@null" value="@SuppressWarnings(&quot;null&quot;)" description="忽略空指针" toReformat="false" toShortenFQNames="true">
+  <template name="unn" value="@SuppressWarnings(&quot;null&quot;)" description="忽略空指针" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="@all" value="@SuppressWarnings(&quot;null&quot;)" description="忽略所有" toReformat="false" toShortenFQNames="true">
+  <template name="una" value="@SuppressWarnings(&quot;null&quot;)" description="忽略所有" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
