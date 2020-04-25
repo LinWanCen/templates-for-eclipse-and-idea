@@ -54,6 +54,9 @@
   <action id="MakeGradleProject">
     <keyboard-shortcut first-keystroke="ctrl f9" />
   </action>
+  <action id="RevealIn">
+    <keyboard-shortcut first-keystroke="alt e" />
+  </action>
   <action id="SaveAll" />
   <action id="SaveChangesAction" />
   <action id="SelectNextOccurrence">
