@@ -84,4 +84,27 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="sdf" value="java.text.SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);" description="SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pat" value="java.util.regex.Pattern $p$_PATTERN = Pattern.compile(&quot;$regexp$&quot;);" description="Pattern $p$ = Pattern.compile(&quot;$regexp$&quot;);" toReformat="false" toShortenFQNames="true">
+    <variable name="p" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="regexp" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="mat" value="java.util.regex.Matcher m = $pattern$.matcher(&quot;$str$&quot;);&#10;while (m.find()) {&#10;    String s = m.group($g$);&#10;    $END$&#10;}" description="matcher group" toReformat="true" toShortenFQNames="true">
+    <variable name="pattern" expression="variableOfType(&quot;java.util.regex.Pattern&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="str" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="g" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
