@@ -23,13 +23,19 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="unn" value="@SuppressWarnings(&quot;null&quot;)" description="忽略空指针" toReformat="false" toShortenFQNames="true">
+  <template name="unn" value="@SuppressWarnings(&quot;ConstantConditions&quot;)" description="忽略空指针 IDEA" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="una" value="@SuppressWarnings(&quot;null&quot;)" description="忽略所有" toReformat="false" toShortenFQNames="true">
+  <template name="una" value="@SuppressWarnings(&quot;all&quot;)" description="忽略所有" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="uns" value="@SuppressWarnings(&quot;SpellCheckingInspection&quot;)" description="忽略拼写检查 IDEA" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />

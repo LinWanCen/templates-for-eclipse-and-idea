@@ -34,16 +34,21 @@
     <keyboard-shortcut first-keystroke="right" />
     <keyboard-shortcut first-keystroke="alt l" />
   </action>
-  <action id="EditorToggleCase">
-    <keyboard-shortcut first-keystroke="shift ctrl u" />
-    <keyboard-shortcut first-keystroke="shift ctrl x" />
-  </action>
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="up" />
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
+    <keyboard-shortcut first-keystroke="alt end" />
+  </action>
   <action id="FixDocComment">
     <keyboard-shortcut first-keystroke="ctrl back_slash" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="alt end" />
   </action>
   <action id="HippieCompletion">
     <keyboard-shortcut first-keystroke="alt comma" />
@@ -54,6 +59,10 @@
   <action id="MakeGradleProject">
     <keyboard-shortcut first-keystroke="ctrl f9" />
   </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="alt end" />
+  </action>
   <action id="RevealIn">
     <keyboard-shortcut first-keystroke="alt e" />
   </action>
@@ -61,5 +70,8 @@
   <action id="SaveChangesAction" />
   <action id="SelectNextOccurrence">
     <keyboard-shortcut first-keystroke="alt n" />
+  </action>
+  <action id="StringManipulation.SwitchStyleAction">
+    <keyboard-shortcut first-keystroke="shift ctrl x" />
   </action>
 </keymap>

@@ -10,12 +10,6 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="doc" value="/** $SELECTION$ */$END$" description="/**  */" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
-      <option name="JS_STATEMENT" value="true" />
-    </context>
-  </template>
   <template name="Ip" value="Integer.parseInt($SELECTION$)$END$" description="Integer.parseInt" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_CODE" value="true" />
@@ -29,21 +23,8 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="hr" value="/* ******************* $text$ ******************* */" description="/* ******************* $comm$ ******************* */ 左右各20个*" toReformat="false" toShortenFQNames="true">
-    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
-    </context>
-  </template>
   <template name="rts" value="// Long类型会出现异常信息&#10;redisTemplate.setKeySerializer(new org.springframework.data.redis.serializer.StringRedisSerializer());&#10;redisTemplate.setValueSerializer(new org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer(Object.class));&#10;redisTemplate.setHashValueSerializer(new org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer(Object.class));" description="redisTemplate.set~Serializer" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="lm" value="java.util.List&lt;java.util.Map&lt;String, $Object$&gt;&gt; " description="List&lt;Map&lt;String, Object&gt;&gt;" toReformat="true" toShortenFQNames="true">
-    <variable name="Object" expression="" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
@@ -57,28 +38,13 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="mapnew" value="java.util.Map&lt;String, $Object$&gt; map = new java.util.HashMap&lt;&gt;();" description="Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();" toReformat="true" toShortenFQNames="true">
-    <variable name="Object" expression="" defaultValue="&quot;Object&quot;" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
-  <template name="mp" value="$map$.put(&quot;$name$&quot;, $obj$);" description="map.put(&quot;var&quot;, var)" toReformat="false" toShortenFQNames="true">
-    <variable name="map" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="false" />
-    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="false" />
-    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
   <template name="pl" value="&quot; + $var$ + &quot;" description="&quot; + var + &quot;" toReformat="true" toShortenFQNames="true">
     <variable name="var" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_STRING" value="true" />
     </context>
   </template>
-  <template name="pc" value="private $Type$() {}" description="构造函数私有" toReformat="false" toShortenFQNames="true">
+  <template name="pc" value="private $Type$() {}" description="private $Type$() {}" toReformat="false" toShortenFQNames="true">
     <variable name="Type" expression="qualifiedClassName()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
@@ -105,6 +71,27 @@
     <context>
       <option name="JAVA_DECLARATION" value="true" />
       <option name="JAVA_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="met" value="public $return$ $name$() {&#10;    $END$&#10;}" description="public void name() {}" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="func" value="public static $return$ $name$() {&#10;    $END$&#10;}" description="public static void name() {}" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="sb" value="java.lang.StringBuilder $sb$ = new StringBuilder();" description="StringBuilder sb = new StringBuilder();" toReformat="true" toShortenFQNames="true">
+    <variable name="sb" expression="" defaultValue="&quot;sb&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
 </templateSet>

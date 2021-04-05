@@ -1,5 +1,7 @@
-# IntlliJ IDEA
-.iml
-**/.idea/
-# 不排除运行配置
-!**/.idea/runConfigurations/
+### IntelliJ IDEA ###
+*.iml
+**/.idea/*
+#### 运行配置
+!**/.idea/runConfigurations
+#### 搜索范围
+!**/.idea/scopes

@@ -46,4 +46,15 @@
       <option name="MAVEN" value="true" />
     </context>
   </template>
+  <template name="junit5" value="    &lt;dependency&gt;&#10;      &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;&#10;      &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;&#10;      &lt;version&gt;5.5.2&lt;/version&gt;&#10;      &lt;scope&gt;compile&lt;/scope&gt;&#10;    &lt;/dependency&gt;" description="junit5" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
+  <template name="pro" value="  &lt;properties&gt;&#10;    &lt;java.version&gt;$java_version$&lt;/java.version&gt;&#10;    &lt;maven.compiler.source&gt;$java_version$&lt;/maven.compiler.source&gt;&#10;    &lt;maven.compiler.target&gt;$java_version$&lt;/maven.compiler.target&gt;&#10;    &lt;maven.compiler.compilerVersion&gt;$java_version$&lt;/maven.compiler.compilerVersion&gt;&#10;&#10;    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;&#10;    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;&#10;    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;&#10;  &lt;/properties&gt;" description="properties for java version and encoding" toReformat="true" toShortenFQNames="true">
+    <variable name="java_version" expression="" defaultValue="&quot;1.8&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="MAVEN" value="true" />
+    </context>
+  </template>
 </templateSet>
