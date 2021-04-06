@@ -1,0 +1,14 @@
+@startuml 组件图
+
+package "Some Group" {
+HTTP - [First Component]
+[Another Component]
+}
+
+package "Other Groups" {
+FTP - [Second Component]
+
+[First Component] --> FTP
+}
+
+@enduml

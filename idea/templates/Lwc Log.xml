@@ -1,0 +1,38 @@
+<templateSet group="Lwc Log">
+  <template name="logg" value="private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($thisClass$.class);" description="private static final Logger LOG = LoggerFactory.getLogger($thisClass$.class);" toReformat="true" toShortenFQNames="true">
+    <variable name="thisClass" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="loggi" value="LOG.info(&quot;$msg$&quot;);" description="LOG.info(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="loggw" value="LOG.warn(&quot;$msg$&quot;);" description="LOG.warn(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="logge" value="LOG.error(&quot;$msg$&quot;);" description="LOG.error(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="loggd" value="LOG.debug(&quot;$msg$&quot;);" description="LOG.debug(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="loggj" value="LOG.info(&quot;$v$:{}&quot;, com.alibaba.fastjson.JSON.toJSONString($v$));" description="LOG.info(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <variable name="v" expression="" defaultValue="suggestFirstVariableName(&quot;Object&quot;)" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

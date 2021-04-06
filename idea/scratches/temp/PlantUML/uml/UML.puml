@@ -1,0 +1,19 @@
+@startuml UML关系图 类图 https://plantuml.com/zh/class-diagram
+hide empty circle
+hide empty members
+skinparam shadowing false
+
+parent\n父类 <|-- child\n子类 : extend\n1.继承
+
+interface\n接口 <|.. achieve\n实现 : implements\n2.实现
+
+usage\n使用方 ..> call\n被用方 : dependency\n3.依赖
+
+owner\n主人 --> be_owned\n被拥有 : association\n4.1.关联
+
+A - B : association both\n4.2.双向关联
+
+overall\n整体 o--> members\n成员 : aggregation\n5.聚合
+
+whole\n总体 *--> part\n部分 : composition\n6.组合
+@enduml

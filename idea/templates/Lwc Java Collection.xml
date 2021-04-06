@@ -1,0 +1,25 @@
+<templateSet group="Lwc Java Collection">
+  <template name="mp" value="$map$.put(&quot;$name$&quot;, $obj$);" description="map.put(&quot;var&quot;, var)" toReformat="false" toShortenFQNames="true">
+    <variable name="map" expression="variableOfType(&quot;java.util.Map&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="obj" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="name" expression="obj" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mn" value="java.util.Map&lt;String, $Object$&gt; $map$ = new java.util.HashMap&lt;&gt;();" description="Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();" toReformat="true" toShortenFQNames="true">
+    <variable name="Object" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <variable name="map" expression="" defaultValue="&quot;map&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="lm" value="java.util.List&lt;java.util.Map&lt;String, $Object$&gt;&gt; " description="List&lt;Map&lt;String, Object&gt;&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="Object" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

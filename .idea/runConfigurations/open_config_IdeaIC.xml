@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="open-config-IdeaIC" type="BatchConfigurationType" factoryName="Batch">
+    <module name="templates-for-eclipse-and-idea" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/idea" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="open-config-IdeaIC.bat" />
+    <option name="PARAMETERS" value="" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
